@@ -1,0 +1,88 @@
+---
+layout: default
+---
+<body>
+<!-------- Begin Header ---->
+  <header>
+    <div class="main">
+      <nav>
+        <ul>
+          <li><a href="about.html">about</a></li>
+          <li><a href="#filternav">projects</a></li>
+          <li><a href="contact.html">let's get coffee</a></li>
+        </ul>
+      </nav>
+      <h1 class="animated bounceInDown">SAM<br>MASOPUST</h1>
+    </div>
+  </header>
+  <!-- Nav Filter -->
+  <section class="filter-links">
+    <a id="filternav">
+    <ul id="filter">
+      <li class="current"><a href="#">all</a></li>
+      <li><a href="#">design</a></li>
+      <li><a href="#">photography</a></li>
+      <li><a href="#">web</a></li>
+      <li><a href="#">branding</a></li>
+    </ul>
+  </a>
+  </section>
+
+  <!-- <a href="#" data-featherlight="testing.html">Open ajax content in lightbox</a> -->
+
+<!-------- Begin Projects ---->
+  <section class="projects">
+    <div class="row">
+      {% for project in site.projects %}
+      <a href="#" data-featherlight="#{{project.name}}">
+        <div class="{{project.size}} columns {{project.name}} {{project.category}}">
+        </div>
+      </a>
+      <div id="{{project.name}}" class="lightbox">
+        <div class="lightboxshape">
+          <div class="project-description">
+            <h2>{{project.title}}</h2>
+            <p>
+              {{project.content}}
+            </p>
+            <!-- <div class="my-slider">
+            	<ul>
+            		<li>My slide</li>
+            		<li>Another slide</li>
+            		<li>My last slide</li>
+            	</ul>
+            </div> -->
+
+          </div>
+          <div class="gallery {{project.name}}">
+            {% for pic in project.pics %}
+            <div>
+                <!-- <img src="{pic.path}" alt="{pic.name}"> -->
+            </div>
+          {% endfor %}
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+    </div><!-- row -->
+  </section> <!-- end project 1 -->
+
+  <!-------- Footer ---->
+    <footer>
+      <!-- <div class="my-slider">
+      	<ul>
+      		<li>My slide</li>
+      		<li>Another slide</li>
+      		<li>My last slide</li>
+      	</ul>
+      </div> -->
+      <nav>
+        <ul>
+          <li><a href="about.html">about</a></li>
+          <li><a href="#">projects</a></li>
+          <li><a href="#">let's get coffee</a></li>
+        </ul>
+      </nav>
+      <h6>Created by Sam Masopust &#169;2016</h6>
+    </footer>

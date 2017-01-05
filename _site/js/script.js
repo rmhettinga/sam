@@ -40,7 +40,7 @@ $(document).ready(function() {
 });
 
 
-$('.my-slidera').unslider();
+$('.my-slider').unslider();
 $('.my-sliderb').unslider();
 $('.my-sliderc').unslider();
 

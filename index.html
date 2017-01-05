@@ -34,37 +34,41 @@ layout: default
   <section class="projects">
     <div class="row">
       {% for project in site.projects %}
-      <a href="#" data-featherlight="#{{project.name}}">
+      <a href="#{{project.name}}">
         <div class="{{project.size}} columns {{project.name}} {{project.category}}">
         </div>
       </a>
-      <div id="{{project.name}}" class="lightbox">
+
+
+      <a href="#_" id="{{project.name}}" class="lightbox">
         <div class="lightboxshape">
           <div class="project-description">
             <h2>{{project.title}}</h2>
             <p>
               {{project.content}}
             </p>
-            <!-- <div class="my-slider">
-            	<ul>
-            		<li>My slide</li>
-            		<li>Another slide</li>
-            		<li>My last slide</li>
-            	</ul>
-            </div> -->
+          </div><!-- project description -->
 
-          </div>
           <div class="gallery {{project.name}}">
             {% for pic in project.pics %}
             <div>
                 <!-- <img src="{pic.path}" alt="{pic.name}"> -->
             </div>
           {% endfor %}
-          </div>
+            <div class="my-slider">
+              <ul>
+                <li>My slide</li>
+                <li>Another slide</li>
+                <li>My last slide</li>
+              </ul>
+            </div>
 
-        </div>
-      </div>
-      {% endfor %}
+          </div><!-- project gallery -->
+
+         </div><!-- lightboxshape -->
+      </a><!-- lightbox -->
+
+    {% endfor %}
     </div><!-- row -->
   </section> <!-- end project 1 -->
 
@@ -80,8 +84,8 @@ layout: default
       <nav>
         <ul>
           <li><a href="about.html">about</a></li>
-          <li><a href="#">projects</a></li>
-          <li><a href="#">let's get coffee</a></li>
+          <li><a href="#filternav">projects</a></li>
+          <li><a href="contact.html">let's get coffee</a></li>
         </ul>
       </nav>
       <h6>Created by Sam Masopust &#169;2016</h6>
